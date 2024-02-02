@@ -20,10 +20,10 @@ public class Creator {
         String dateStr = dateFormat.format(date);
 
         // Spécifiez le répertoire dans lequel vous voulez créer le dossier
-        String repertoireParent = "C:\\Users\\delpni01\\IdeaProjects\\TipsEnergyManagement2\\export\\";
+        String repertoireParent = "/Users/nicola/Documents/GitHub/TipsEnergyManagement/export";
 
         // Construisez le chemin complet du nouveau dossier
-        String cheminDossier = repertoireParent + "\\" + getDate();
+        String cheminDossier = repertoireParent + "/" + getDate();
 
         // Créez le dossier s'il n'existe pas déjà
         Path cheminDossierPath = Paths.get(cheminDossier);
@@ -40,7 +40,7 @@ public class Creator {
     public static void createFile(String text, String code){
         createFolder();
         // Spécifiez le chemin du fichier à créer
-        String cheminFichier = "C:\\Users\\delpni01\\IdeaProjects\\TipsEnergyManagement2\\export\\" + getDate() + "\\" + code + ".json";
+        String cheminFichier = "/Users/nicola/Documents/GitHub/TipsEnergyManagement/export/" + getDate() + "/" + code + ".json";
 
 
         // Convertissez la chaîne en tableau de bytes
@@ -64,7 +64,7 @@ public class Creator {
 
     public static String getFile(String code){
         // Spécifiez le chemin du fichier à lire
-        String cheminFichier = "C:\\Users\\delpni01\\IdeaProjects\\TipsEnergyManagement2\\export\\" + getDate() + "\\" + code + ".json";
+        String cheminFichier = "/Users/nicola/Documents/GitHub/TipsEnergyManagement/export/" + getDate() + "/" + code + ".json";
 
         // Utilisez BufferedReader pour lire le fichier
         try (BufferedReader reader = new BufferedReader(new FileReader(cheminFichier))) {

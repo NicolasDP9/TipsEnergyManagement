@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class App {
     public static void main( String[] args ) throws IOException, NoSuchAlgorithmException, KeyManagementException {
         ArrayList<String> allLanguages = Languages.getLanguagesCode();
-        //for (int i=0; i < allLanguages.size();i++){
-        //    Translation.getTranslation(allLanguages.get(i));
-        //}
+        for (int i=0; i < allLanguages.size();i++){
+            Translation.getTranslation(allLanguages.get(i));
+        }
 
         //Creating a JSONObject object
         JSONObject jsonObject = new JSONObject();
@@ -37,7 +37,7 @@ public class App {
         jsonObject.put("categories",categories);
         jsonObject.put("languages",languages);
         try {
-            FileWriter file = new FileWriter("C:\\Users\\delpni01\\IdeaProjects\\TipsEnergyManagement2\\output.json");
+            FileWriter file = new FileWriter("/Users/nicola/Documents/GitHub/TipsEnergyManagement/export/output.json");
             file.write(jsonObject.toString());
             file.close();
         } catch (IOException e) {
